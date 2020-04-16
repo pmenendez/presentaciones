@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Desarrollo de Proyectos en Metro</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="./reveal.js/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="./reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? './reveal.js/css/print/pdf.css' : './reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="./reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Desarrollo de Proyectos en Metro</h1>
+</section>
+
+<section id="proyectos-actualmente-en-operación" class="title-slide slide level2"><h2>Proyectos actualmente en operación</h2></section>
+<section><section id="monitoreo-de-red" class="title-slide slide level2"><h2>Monitoreo de red</h2></section><section id="descripción" class="slide level3">
+<h3>Descripción</h3>
+<ul>
+<li>Monitoreo de elementos de Metro utilizando la API de Broadsign para conocer el estado de los reproductores.</li>
+<li>Impementación de interface web (desktop y móvil) para visualizar el estado de reproductores</li>
+<li>Generación de alarmas ante cambios en el estado de elementos (en revisión)</li>
+</ul>
+</section><section id="interface-web" class="slide level3">
+<h3>Interface web</h3>
+<p><img src="files/dashboard.png" width="300px" ></p>
+</section></section>
+<section><section id="estado-de-la-red" class="title-slide slide level2"><h2>Estado de la Red</h2></section><section id="descripción-1" class="slide level3">
+<h3>Descripción</h3>
+<ul>
+<li>Aplicación en Broadsign que informa estado de la red de Metro usando webservice de Metro</li>
+<li>Opcionalmente puede exhibir simultáneamente auspicio (deshabilitado desde octubre de 2019)</li>
+</ul>
+</section><section id="semáforo-en-elementos" class="slide level3">
+<h3>Semáforo en Elementos</h3>
+<p><img src="files/semaforo.png" width="200px" /></p>
+</section><section id="interface-con-webservice" class="slide level3">
+<h3>Interface con webservice</h3>
+<p><img src="files/estadored.png" width="500px" /></p>
+</section></section>
+<section><section id="auspicios-metro" class="title-slide slide level2"><h2>Auspicios Metro</h2></section><section id="descripción-2" class="slide level3">
+<h3>Descripción</h3>
+<ul>
+<li><p>Aplicaciones para exhibir publicidad en Metro, con fuentes dinámicas de información:</p>
+<ul>
+<li>Variables meteorológicas (temperatura, índice UV)</li>
+<li>Contadores</li>
+<li>Hora actual</li>
+</ul></li>
+</ul>
+</section></section>
+<section id="proyectos-en-etapa-de-desarrollo" class="title-slide slide level2"><h2>Proyectos en etapa de desarrollo</h2></section>
+<section><section id="implementación-de-códigos-qr" class="title-slide slide level2"><h2>Implementación de códigos QR</h2></section><section id="descripción-3" class="slide level3">
+<h3>Descripción</h3>
+<ul>
+<li>Conversión de códigos de elementos de Metro en códigos QR</li>
+</ul>
+<p><img src="files/L1MQ3001H.png" width="200px" /></p>
+</section><section id="implementación-de-códigos-qr-1" class="slide level3">
+<h3>Implementación de códigos QR</h3>
+<ul>
+<li>Durante febrero 2020 se hicieron pruebas en terreno para determinar el tamaño de los códigos para ser legibles bajo las condiciones más desfavorables</li>
+<li>Actualmente se está preparando la instalación en un grupo de elementos en una estación de Metro para empezar pruebas con aplicaciones que usarán los códigos QR</li>
+</ul>
+</section></section>
+<section><section id="verificación-de-elementos" class="title-slide slide level2"><h2>Verificación de elementos</h2></section><section id="descripción-4" class="slide level3">
+<h3>Descripción</h3>
+<ul>
+<li>Aplicación móvil para verificar elementos de Metro</li>
+<li>Hace uso de los códigos QR para identificar el elemento</li>
+<li>Proporciona geolocalización para verificar que las imágenes correspondan a las estaciones</li>
+<li>Permite identificar al usuario que hace la verificación</li>
+<li>Registra el estado del elemento</li>
+</ul>
+</section><section id="verificación-de-elementos-1" class="slide level3">
+<h3>Verificación de elementos</h3>
+<ul>
+<li>Ventana inicial de app</li>
+</ul>
+<p><img src="files/app01.jpg" width="200px" /></p>
+</section><section id="verificación-de-elementos-2" class="slide level3">
+<h3>Verificación de elementos</h3>
+<ul>
+<li>Escaneo de QR</li>
+</ul>
+<p><img src="files/app02.jpg" width="200px" /></p>
+</section><section id="verificación-de-elementos-3" class="slide level3">
+<h3>Verificación de elementos</h3>
+<ul>
+<li>App permite fotografiar elemento cuyo QR se escaneó</li>
+</ul>
+<p><img src="files/elemento.jpg" width="400px" /></p>
+</section><section id="verificación-de-elementos-4" class="slide level3">
+<h3>Verificación de elementos</h3>
+<ul>
+<li>Observaciones al estado del elemento</li>
+</ul>
+<p><img src="files/app03.jpg" width="400px" /></p>
+</section><section id="verificación-de-elementos-5" class="slide level3">
+<h3>Verificación de elementos</h3>
+<ul>
+<li>Información se sube a servidor en la oficina</li>
+</ul>
+<p><img src="files/app04.jpg" width="200px" /></p>
+</section><section id="verificación-de-elementos-6" class="slide level3">
+<h3>Verificación de elementos</h3>
+<ul>
+<li>La aplicación permitirá centralizar y uniformar la información</li>
+<li>Los datos almacenados permitirán elaborar indicadores con respecto a distintos aspectos de la operación</li>
+<li>Con indicadores consistentes y periódicos, será posible implementar mejoras y evaluar los resultados</li>
+<li>Se podrá extender el uso de la aplicación a los demás proyectos de Massiva</li>
+</ul>
+</section></section>
+<section><section id="gestión-y-manejo-de-op" class="title-slide slide level2"><h2>Gestión y Manejo de OP</h2></section><section id="descripción-5" class="slide level3">
+<h3>Descripción</h3>
+<ul>
+<li>La información de fechas para montar y desmontar campañas está centralizada en Ad Manager</li>
+<li>La interface de Ad Manager no facilita un manejo ágil de la información de campañas</li>
+<li>Particularmente se dificulta la actualización en Ad Manager del estado de las instalaciones</li>
+<li>También se hace difícil determinar las fechas de término de las campañas, dado el manejo que hace Ad Manager de las OP</li>
+</ul>
+</section><section id="gestión-y-manejo-de-op-1" class="slide level3">
+<h3>Gestión y Manejo de OP</h3>
+<ul>
+<li>Para resolver las dificultades anteriores, se decidió implementar un sistema que extraiga la información de OP desde Ad Manager y permita una gestión más sencilla</li>
+</ul>
+</section></section>
+<section><section id="pruebas-de-broadsign-en-linux" class="title-slide slide level2"><h2>Pruebas de Broadsign en Linux</h2></section><section id="descripción-6" class="slide level3">
+<h3>Descripción</h3>
+<ul>
+<li>Instalación utilizando Windows 10</li>
+<li>Ambiente conocido permitió partida rápida de las tareas de instalación:
+<ul>
+<li>herramientas para clonación de equipos</li>
+<li>administración remota</li>
+<li>configuración</li>
+</ul></li>
+</ul>
+</section><section id="pruebas-de-broadsign-en-linux-1" class="slide level3">
+<h3>Pruebas de Broadsign en Linux</h3>
+<ul>
+<li>Dificultades en la operación:
+<ul>
+<li>administración masiva de equipos</li>
+<li>comportamiento indeseado de componentes del sistema operativo (Windows Updates)</li>
+</ul></li>
+</ul>
+</section><section id="pruebas-de-broadsign-en-linux-2" class="slide level3">
+<h3>Pruebas de Broadsign en Linux</h3>
+<ul>
+<li>Se busca resolver las dificultades de operación</li>
+<li>Se evita la compra de licencias para Windows 10</li>
+<li>Se espera mejorar la estabilidad de los elementos</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"></code></pre></div>
+</section></section>
+    </div>
+  </div>
+
+  <script src="./reveal.js/lib/js/head.min.js"></script>
+  <script src="./reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: './reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: './reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: './reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
