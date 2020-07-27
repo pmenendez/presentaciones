@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="./reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
   <style type="text/css">
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
@@ -77,17 +77,17 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="./reveal.js/css/theme/white.css" id="theme">
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement( 'link' );
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? './reveal.js/css/print/pdf.css' : './reveal.js/css/print/paper.css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
   <!--[if lt IE 9]>
-  <script src="./reveal.js/lib/js/html5shiv.js"></script>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
   <![endif]-->
 </head>
 <body>
@@ -106,8 +106,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Impementación de interface web (desktop y móvil) para visualizar el estado de reproductores</li>
 <li>Generación de alarmas ante cambios en el estado de elementos (en revisión)</li>
 </ul>
-</section><section id="interface-web" class="slide level3">
-<h3>Interface web</h3>
+</section><section id="monitoreo-de-red-1" class="slide level3">
+<h3>Monitoreo de red</h3>
+<ul>
+<li>Interface web</li>
+</ul>
 <p><img src="files/dashboard.png" width="300px" ></p>
 </section></section>
 <section><section id="estado-de-la-red" class="title-slide slide level2"><h2>Estado de la Red</h2></section><section id="descripción-1" class="slide level3">
@@ -134,7 +137,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 </section></section>
-<section id="proyectos-en-etapa-de-desarrollo" class="title-slide slide level2"><h2>Proyectos en etapa de desarrollo</h2></section>
+<section id="proyectos-en-etapa-de-implementación" class="title-slide slide level2"><h2>Proyectos en etapa de implementación</h2></section>
 <section><section id="implementación-de-códigos-qr" class="title-slide slide level2"><h2>Implementación de códigos QR</h2></section><section id="descripción-3" class="slide level3">
 <h3>Descripción</h3>
 <ul>
@@ -144,11 +147,63 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section><section id="implementación-de-códigos-qr-1" class="slide level3">
 <h3>Implementación de códigos QR</h3>
 <ul>
-<li>Durante febrero 2020 se hicieron pruebas en terreno para determinar el tamaño de los códigos para ser legibles bajo las condiciones más desfavorables</li>
-<li>Actualmente se está preparando la instalación en un grupo de elementos en una estación de Metro para empezar pruebas con aplicaciones que usarán los códigos QR</li>
+<li>Durante febrero 2020 se hicieron pruebas en terreno para determinar el tamaño de los códigos para ser legibles bajo las condiciones más desfavorables, y se preparó un conjunto de códigos para hacer una instalación piloto.</li>
+</ul>
+</section><section id="implementación-de-códigos-qr-2" class="slide level3">
+<h3>Implementación de códigos QR</h3>
+<ul>
+<li>Se instalaron placas con códigos en la estación Las Rejas, con los cuales se hicieron pruebas de lectura, y se validaron parámetros como la ubicación, el material utilizado, el procedimiento de instalación, etc.</li>
+<li>Actualmente se está a la espera de la aprobación para solicitar la producción de códigos y realizar la instalación en todos los elementos de Línea 1. Se realizaron cambios en el material, de acuerdo con los resultados del piloto en Las Rejas.</li>
 </ul>
 </section></section>
-<section><section id="verificación-de-elementos" class="title-slide slide level2"><h2>Verificación de elementos</h2></section><section id="descripción-4" class="slide level3">
+<section><section id="gestión-y-manejo-de-op" class="title-slide slide level2"><h2>Gestión y Manejo de OP</h2></section><section id="descripción-4" class="slide level3">
+<h3>Descripción</h3>
+<ul>
+<li>La información de fechas para montar y desmontar campañas está centralizada en Ad Manager</li>
+<li>La interface de Ad Manager no facilita un manejo ágil de la información de campañas</li>
+<li>Particularmente se dificulta la actualización en Ad Manager del estado de las instalaciones</li>
+<li>También se hace difícil determinar las fechas de término de las campañas, dado el manejo que hace Ad Manager de las OP</li>
+</ul>
+</section><section id="gestión-y-manejo-de-op-1" class="slide level3">
+<h3>Gestión y Manejo de OP</h3>
+<ul>
+<li>Para resolver las dificultades anteriores, se decidió implementar un sistema que extraiga la información de OP desde alguno de los sistemas de Massiva, y que permita una gestión más sencilla</li>
+<li>Fue necesario hacer pruebas con distintas vistas desde la base de datos SQL Server de Massiva, para confirmar que se cuenta con toda la información necesaria.</li>
+</ul>
+</section><section id="gestión-y-manejo-de-op-2" class="slide level3">
+<h3>Gestión y Manejo de OP</h3>
+<ul>
+<li>Se optó por hacer uso de una vista que relaciona la información de AdManager y SalesForce.</li>
+<li>La información adicional generada se almacena en una base de datos de Operaciones, no en SQL Server.</li>
+</ul>
+</section><section id="gestión-y-manejo-de-op-3" class="slide level3">
+<h3>Gestión y Manejo de OP</h3>
+<ul>
+<li><p>La aplicación web cuenta con tres vistas por el momento:</p>
+<ol type="1">
+<li>Listado de Contratos en la versión más reciente, y detalle de los subcontratos asociados.</li>
+<li>Listado de Subcontratos de las versiones más recientes.</li>
+<li>Calendario de actividades, obtenido de las fechas de inicio y término de cada uno de los subcontratos en su versión más actual.</li>
+</ol></li>
+</ul>
+</section><section id="acceso-a-aplicación" class="slide level3">
+<h3>Acceso a aplicación</h3>
+<p><img src="files/gow_01.png" width="800px" /></p>
+</section><section id="vista-de-principal-de-contratos" class="slide level3">
+<h3>Vista de Principal de Contratos</h3>
+<p><img src="files/gow_02.png" width="800px" /></p>
+</section><section id="vista-de-contratos-y-subcontratos-asociados" class="slide level3">
+<h3>Vista de Contratos y Subcontratos asociados</h3>
+<p><img src="files/gow_03.png" width="800px" /></p>
+</section><section id="vista-principal-de-subcontratos" class="slide level3">
+<h3>Vista Principal de Subcontratos</h3>
+<p><img src="files/gow_04.png" width="800px" /></p>
+</section><section id="vista-de-actividades" class="slide level3">
+<h3>Vista de actividades</h3>
+<p><img src="files/gow_05.png" width="800px" /></p>
+</section></section>
+<section id="proyectos-en-etapa-de-desarrollo" class="title-slide slide level2"><h2>Proyectos en etapa de desarrollo</h2></section>
+<section><section id="verificación-de-elementos" class="title-slide slide level2"><h2>Verificación de elementos</h2></section><section id="descripción-5" class="slide level3">
 <h3>Descripción</h3>
 <ul>
 <li>Aplicación móvil para verificar elementos de Metro</li>
@@ -160,57 +215,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section><section id="verificación-de-elementos-1" class="slide level3">
 <h3>Verificación de elementos</h3>
 <ul>
-<li>Ventana inicial de app</li>
-</ul>
-<p><img src="files/app01.jpg" width="200px" /></p>
-</section><section id="verificación-de-elementos-2" class="slide level3">
-<h3>Verificación de elementos</h3>
-<ul>
-<li>Escaneo de QR</li>
-</ul>
-<p><img src="files/app02.jpg" width="200px" /></p>
-</section><section id="verificación-de-elementos-3" class="slide level3">
-<h3>Verificación de elementos</h3>
-<ul>
-<li>App permite fotografiar elemento cuyo QR se escaneó</li>
-</ul>
-<p><img src="files/elemento.jpg" width="400px" /></p>
-</section><section id="verificación-de-elementos-4" class="slide level3">
-<h3>Verificación de elementos</h3>
-<ul>
-<li>Observaciones al estado del elemento</li>
-</ul>
-<p><img src="files/app03.jpg" width="400px" /></p>
-</section><section id="verificación-de-elementos-5" class="slide level3">
-<h3>Verificación de elementos</h3>
-<ul>
-<li>Información se sube a servidor en la oficina</li>
-</ul>
-<p><img src="files/app04.jpg" width="200px" /></p>
-</section><section id="verificación-de-elementos-6" class="slide level3">
-<h3>Verificación de elementos</h3>
-<ul>
 <li>La aplicación permitirá centralizar y uniformar la información</li>
 <li>Los datos almacenados permitirán elaborar indicadores con respecto a distintos aspectos de la operación</li>
 <li>Con indicadores consistentes y periódicos, será posible implementar mejoras y evaluar los resultados</li>
 <li>Se podrá extender el uso de la aplicación a los demás proyectos de Massiva</li>
 </ul>
-</section></section>
-<section><section id="gestión-y-manejo-de-op" class="title-slide slide level2"><h2>Gestión y Manejo de OP</h2></section><section id="descripción-5" class="slide level3">
-<h3>Descripción</h3>
+</section><section id="verificación-de-elementos-2" class="slide level3">
+<h3>Verificación de elementos</h3>
 <ul>
-<li>La información de fechas para montar y desmontar campañas está centralizada en Ad Manager</li>
-<li>La interface de Ad Manager no facilita un manejo ágil de la información de campañas</li>
-<li>Particularmente se dificulta la actualización en Ad Manager del estado de las instalaciones</li>
-<li>También se hace difícil determinar las fechas de término de las campañas, dado el manejo que hace Ad Manager de las OP</li>
+<li>Ventana inicial de app</li>
 </ul>
-</section><section id="gestión-y-manejo-de-op-1" class="slide level3">
-<h3>Gestión y Manejo de OP</h3>
+<p><img src="files/app01.jpg" width="200px" /></p>
+</section><section id="verificación-de-elementos-3" class="slide level3">
+<h3>Verificación de elementos</h3>
 <ul>
-<li>Para resolver las dificultades anteriores, se decidió implementar un sistema que extraiga la información de OP desde Ad Manager y permita una gestión más sencilla</li>
+<li>Escaneo de QR</li>
 </ul>
-<p><img src="files/gow.png" width="500px" /></p>
+<p><img src="files/app02.jpg" width="200px" /></p>
+</section><section id="verificación-de-elementos-4" class="slide level3">
+<h3>Verificación de elementos</h3>
+<ul>
+<li>App permite fotografiar elemento cuyo QR se escaneó</li>
+</ul>
+<p><img src="files/elemento.jpg" width="400px" /></p>
+</section><section id="verificación-de-elementos-5" class="slide level3">
+<h3>Verificación de elementos</h3>
+<ul>
+<li>Observaciones al estado del elemento</li>
+</ul>
+<p><img src="files/app03.jpg" width="400px" /></p>
+</section><section id="verificación-de-elementos-6" class="slide level3">
+<h3>Verificación de elementos</h3>
+<ul>
+<li>Información se sube a servidor en la oficina</li>
+</ul>
+<p><img src="files/app04.jpg" width="200px" /></p>
+</section><section id="verificación-de-elementos-7" class="slide level3">
+<h3>Verificación de elementos</h3>
+<ul>
+<li>De acuerdo con los resultados del proyecto piloto en Estación Las Rejas, es necesario hacer ajustes a la app, principalmente al módulo de captura del código QR, para permitir una instalación más segura de los códigos.</li>
+<li>También está pendiente la integración de la app con un sistema de generación de tickets de problemas.</li>
+</ul>
+</section><section id="verificación-de-elementos-vista-web" class="slide level3">
+<h3>Verificación de elementos, vista web</h3>
+<ul>
+<li>A través de una aplicación web, se pueden obtener un reporte para un día determinado.</li>
+<li>La aplicación web será extendida para soportar filtros por fechas, estaciones y elementos, y podrá generar reportes en PDF para ser descargados, junto con los datos para que puedan ser procesados usando otras herramientas.</li>
+</ul>
+</section><section id="verificación-de-elementos-vista-web-1" class="slide level3">
+<h3>Verificación de elementos, vista web</h3>
+<p><img src="files/imagenesqr_01.png" width="800px" /></p>
+</section><section id="verificación-de-elementos-vista-web-2" class="slide level3">
+<h3>Verificación de elementos, vista web</h3>
+<p><img src="files/imagenesqr_02.png" width="800px" /></p>
 </section></section>
+<section id="proyectos-pendientes" class="title-slide slide level2"><h2>Proyectos pendientes</h2></section>
 <section><section id="pruebas-de-broadsign-en-linux" class="title-slide slide level2"><h2>Pruebas de Broadsign en Linux</h2></section><section id="descripción-6" class="slide level3">
 <h3>Descripción</h3>
 <ul>
@@ -228,7 +287,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Dificultades en la operación:
 <ul>
 <li>administración masiva de equipos</li>
-<li>comportamiento indeseado de componentes del sistema operativo (Windows Updates)</li>
+<li>comportamiento indeseado de componentes del sistema operativo (Windows Updates, ventanas de TeamViewer)</li>
 </ul></li>
 </ul>
 </section><section id="pruebas-de-broadsign-en-linux-2" class="slide level3">
@@ -246,8 +305,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </div>
   </div>
 
-  <script src="./reveal.js/lib/js/head.min.js"></script>
-  <script src="./reveal.js/js/reveal.js"></script>
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
 
   <script>
 
@@ -259,9 +318,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
         // Optional reveal.js plugins
         dependencies: [
-          { src: './reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: './reveal.js/plugin/zoom-js/zoom.js', async: true },
-          { src: './reveal.js/plugin/notes/notes.js', async: true }
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
         ]
       });
     </script>
